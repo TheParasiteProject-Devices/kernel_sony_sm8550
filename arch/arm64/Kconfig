@@ -2179,6 +2179,8 @@ config DMI
 
 endmenu
 
+source "arch/arm64/Kconfig.sony"
+
 config SYSVIPC_COMPAT
 	def_bool y
 	depends on COMPAT && SYSVIPC

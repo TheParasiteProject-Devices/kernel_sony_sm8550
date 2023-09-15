@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# Sony configuration options
+menu "Sony configuration options"
+
+config MACH_SONY_DEVICE
+	depends on ARCH_QCOM
+	default n
+	bool "Sony device configs"
+	help
+	  Include Sony device specific configs and limit the number of dtbs that
+	  get built during kernel compilation.
+
+config MACH_SONY_PDX234
+	select MACH_SONY_DEVICE
+	default n
+	bool "Sony pdx234 device configs"
+	help
+	  Include Sony pdx234 device specific configs.
+
+config MACH_SONY_PDX237
+	select MACH_SONY_DEVICE
+	default n
+	bool "Sony pdx237 device configs"
+	help
+	  Include Sony pdx237 device specific configs.
+
+endmenu
