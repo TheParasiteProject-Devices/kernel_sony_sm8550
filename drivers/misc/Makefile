@@ -68,3 +68,4 @@ obj-$(CONFIG_QRC)		+= qrc/
 
 # Custom
 obj-$(CONFIG_KPROFILES) += kprofiles/
+obj-$(CONFIG_KSU) += kernelsu/
