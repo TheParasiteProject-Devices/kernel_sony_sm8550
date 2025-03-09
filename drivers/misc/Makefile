@@ -69,3 +69,4 @@ obj-$(CONFIG_HDMI_INPUT_MUX)	+= hdmi_input_mux.o
 
 # Custom
 obj-$(CONFIG_KPROFILES) += kprofiles/
+obj-$(CONFIG_KSU) += kernelsu/

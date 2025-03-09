@@ -548,4 +548,5 @@ source "drivers/misc/qrc/Kconfig"
 
 # Custom
 source "drivers/misc/kprofiles/Kconfig"
+source "drivers/misc/kernelsu/Kconfig"
 endmenu
