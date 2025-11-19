@@ -1011,7 +1011,7 @@ int tls_sw_sendmsg(struct sock *sk, struct msghdr *msg, size_t size)
 			if (ret == -EINPROGRESS)
 				num_async++;
 			else if (ret != -EAGAIN)
-				goto end;
+				goto send_end;
 		}
 	}
 
@@ -1173,9 +1173,8 @@ trim_sgl:
 			goto alloc_encrypted;
 	}
 
-send_end:
 	if (!num_async) {
-		goto end;
+		goto send_end;
 	} else if (num_zc || eor) {
 		int err;
 
@@ -1193,7 +1192,7 @@ send_end:
 		tls_tx_records(sk, msg->msg_flags);
 	}
 
-end:
+send_end:
 	ret = sk_stream_error(sk, msg->msg_flags, ret);
 
 	release_sock(sk);
